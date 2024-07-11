@@ -2,25 +2,20 @@ import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import logo from "../public/logo.jpg";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <header
-      className={`${styles.header} d-flex justify-content-between align-items-center`}
-    >
+    <header className={styles.header}>
       <div className={styles.headerLogo}>
-        <a href="https://www.tasknext.com">
+        <Link href="https://www.tasknext.com">
           <Image src={logo} alt="Logo" />
-        </a>
+        </Link>
       </div>
-      <div
-        className={`${styles.headerTitulo} mx-auto text-white text-center font-weight-bold`}
-      >
-        TaskNext
-      </div>
-      <div className={`${styles.headerLinks} d-flex align-items-center`}>
-        <a href="https://www.tasknext.com/login">Login</a>
-        <a href="https://www.tasknext.com/signup">Cadastro</a>
+      <div className={styles.headerTitulo}>TaskNext</div>
+      <div className={styles.headerLinks}>
+        <Link href="https://www.tLinksknext.com/login">Login</Link>
+        <Link href="https://www.tasknext.com/signup">Cadastro</Link>
       </div>
     </header>
   );
