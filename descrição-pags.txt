@@ -1,0 +1,39 @@
+Página Inicial (Home):
+URL: /
+Arquivo: pages/index.js
+Descrição: Esta é a página principal que mostra uma visão geral do aplicativo
+
+Página de Registro (Sign Up):
+URL: /signup
+Arquivo: pages/signup.js
+Descrição: Permite que novos usuários se registrem no sistema. Contém um formulário de registro.
+
+Página de Login (Sign In):
+URL: /signin
+Arquivo: pages/signin.js
+Descrição: Permite que usuários existentes façam login. Contém um formulário de login.
+
+Página de Tarefas (Tasks):
+URL: /tarefas
+Arquivo: pages/tarefas/index.js
+Descrição: Lista todas as tarefas do usuário. Esta página mostra todas as tarefas e permite a navegação para criar novas tarefas ou visualizar/editar tarefas existentes.
+
+Página de Detalhes da Tarefa (Task Details):
+URL: /tarefas/[id]
+Arquivo: pages/tarefas/[id].js
+Descrição: Mostra os detalhes de uma tarefa específica, com opções para editar ou deletar a tarefa.
+
+Página de Criação de Tarefas
+URL: /tarefas/new 
+Arquivos: pages/tarefas/new.js
+Descrição: Formulários para criar uma nova tarefa.
+
+Página de Categorias (categorias):
+URL: /categorias
+Arquivo: pages/categorias/index.js
+Descrição: Lista todas as categorias do usuário. Esta página mostra todas as categorias e permite a navegação para criar novas categorias ou visualizar/editar categorias existentes.
+
+Página de Detalhes da Categoria (Category Details):
+URL: /categorias/[id]
+Arquivo: pages/categorias/[id].js
+Descrição: Mostra os detalhes de uma categoria específica, com opções para editar ou deletar a categoria.
