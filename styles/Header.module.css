@@ -1,9 +1,51 @@
 .header {
-  background-color: #333;
+  background-color: #3498db;
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Alinha os itens nas extremidades */
   align-items: center;
+  margin: 0;
+  position: relative; /* Adiciona posicionamento relativo para o título */
+}
+
+.headerLogo {
+  margin-left: 0px;
+}
+
+.headerLogo img {
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+}
+
+.headerLinks {
+  display: flex; /* Alinha os links horizontalmente */
+}
+
+.headerLinks a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.headerLinks a:last-child {
+  margin-right: 0; /* Evita margem extra no último item */
+}
+
+.headerLinks a:hover {
+  color: #2ecc71;
+}
+
+.headerTitulo {
+  position: absolute; /* Posiciona o título de forma absoluta */
+  left: 50%; /* Alinha o centro do título com o centro da página */
+  transform: translateX(
+    -50%
+  ); /* Move o título 50% do seu próprio tamanho para a esquerda */
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  white-space: nowrap; /* Evita que o título quebre em várias linhas */
 }
 
 /* Responsividade para telas menores que 768px */
@@ -11,6 +53,7 @@
   .header {
     flex-direction: column;
     align-items: center;
+    position: static; /* Remove posicionamento relativo */
   }
   .headerLogo {
     margin-bottom: 10px;
@@ -21,51 +64,9 @@
   .headerLinks a {
     margin-bottom: 10px;
   }
-}
-
-.headerLogo {
-  margin-right: 20px;
-}
-
-.headerLogo img {
-  width: 20%;
-  height: 20%;
-  border-radius: 50%;
-}
-
-.headerLinks {
-  display: flex;
-  align-items: center;
-}
-
-.headerLinks a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 20px;
-}
-
-.headerLinks a:last-child {
-  margin-right: 0;
-}
-
-.headerTitulo {
-  flex: 1;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  margin: 0; /* Adicione esta linha para remover margens padrão */
-}
-
-/* Adicionando margem ao último item do menu em telas maiores */
-.headerLinks a:last-child {
-  margin-right: 0;
-}
-
-/* Ajuste para centralizar o título em telas menores */
-@media (max-width: 768px) {
   .headerTitulo {
-    text-align: center;
-    margin: 10px 0;
+    position: static; /* Remove posicionamento absoluto */
+    transform: none; /* Remove transformação */
+    margin-bottom: 10px;
   }
 }

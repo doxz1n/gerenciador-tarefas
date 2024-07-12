@@ -8,14 +8,14 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerLogo}>
-        <Link href="https://www.tasknext.com">
+        <Link href="/">
           <Image src={logo} alt="Logo" />
         </Link>
       </div>
       <div className={styles.headerTitulo}>TaskNext</div>
       <div className={styles.headerLinks}>
-        <Link href="https://www.tLinksknext.com/login">Login</Link>
-        <Link href="https://www.tasknext.com/signup">Cadastro</Link>
+        <Link href="/login">Login</Link>
+        <Link href="/cadastro">Cadastro</Link>
       </div>
     </header>
   );
