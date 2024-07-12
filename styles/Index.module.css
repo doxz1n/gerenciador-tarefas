@@ -42,7 +42,6 @@
 .features li {
   margin: 20px;
   list-style: none;
-  background-color: #2980b9;
 }
 
 .features i {
@@ -63,13 +62,4 @@
   font-weight: bold;
   margin-bottom: 10px;
   color: #ffffff;
-}
-
-.callToAction button {
-  background-color: #2980b9;
-  color: #333;
-  border: none;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
 }

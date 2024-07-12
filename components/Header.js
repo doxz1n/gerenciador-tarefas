@@ -1,7 +1,6 @@
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import logo from "../public/logo.jpg";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 
 const Header = () => {

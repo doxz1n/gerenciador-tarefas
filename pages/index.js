@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/Index.module.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function Home() {
-  const titulo = "TaskNext";
   return (
     <>
       <Header></Header>
@@ -13,7 +13,7 @@ function Home() {
         <section className={styles.hero}>
           <h2>Bem-vindo ao TaskNext</h2>
           <p>Gerencie suas tarefas de forma fácil e eficiente</p>
-          <button>Começar agora</button>
+          <button className="btn btn-primary">Começar agora</button>
         </section>
         <section className={styles.features}>
           <h2>Recursos</h2>
@@ -35,20 +35,10 @@ function Home() {
         <section className={styles.callToAction}>
           <h2>Inscreva-se agora</h2>
           <p>E comece a gerenciar suas tarefas de forma eficiente</p>
-          <button>Inscrever-se</button>
+          <button className="btn btn-success btn-lg">Inscrever-se</button>
         </section>
       </div>
-
-      <footer className="footer py-3 mt-5 bg-body-tertiary small text-center">
-        <span className="text-body-secondary">
-          {titulo} por{" "}
-          <Link href="https://github.com/doxz1n">
-            Henrique Sanchez (doxz1n)
-          </Link>
-        </span>
-        {/* <!-- Scripts --> */}
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-      </footer>
+      <Footer></Footer>
     </>
   );
 }
