@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Footer from "../components/Footer"
 import styles from "../styles/CadastroUsr.module.css";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -166,6 +167,7 @@ function Cadastro() {
           )}
         </Formik>
       </div>
+      <Footer></Footer>
     </>
   );
 }
