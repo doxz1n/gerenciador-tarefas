@@ -1,0 +1,40 @@
+@media (min-width: 768px) {
+  .body {
+    height: auto; /* altura automática */
+    width: 80%; /* largura de 80% da tela */
+    margin: 0 auto; /* centralizar horizontalmente */
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    margin-bottom: 5%;
+  }
+}
+
+/* Estilos para telas de celular */
+@media (max-width: 767px) {
+  .body {
+    height: 100vh; /* altura igual à altura da tela */
+    width: 100%; /* largura igual à largura da tela */
+    background-color: #f7f7f7;
+  }
+}
+
+.hero {
+  background-color: #3498db;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.hero h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.form {
+  padding: 20px;
+  background-color: #f7f7f7;
+}

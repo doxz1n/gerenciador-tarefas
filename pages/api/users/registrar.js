@@ -1,29 +1,37 @@
 import connectDB from "../../../lib/dbConnect";
 import User from "../../../models/User.js";
 
-export default async function handler(request, response) {
+export default async function handler(req, res) {
   await connectDB();
 
-  const { method } = request;
-  const { nome, email, senha } = request.body;
+  const { method } = req;
+  const { nome, email, senha } = req.body;
 
   switch (method) {
     case "POST":
       try {
         let user = await User.findOne({ email });
         if (user) {
-          return response.status(400).json({ msg: "Usuário já cadastrado" });
+          return res.status(400).json({ msg: "Usuário já cadastrado" });
         }
         user = new User({ nome, email, senha });
 
         await user.save();
-        response.status(201).json({ msg: "Usuário cadastrado com sucesso" });
+        res.status(201).json({ msg: "Usuário cadastrado com sucesso" });
       } catch (err) {
-        response.status(500).json({ msg: `Erro no servidor, ${err}` });
+        res.status(500).json({ msg: `Erro no servidor, ${err}` });
+      }
+      break;
+    case "GET":
+      try {
+        const users = await User.find();
+        res.status(200).json(users);
+      } catch (err) {
+        res.status(500).json({ msg: `Erro no servidor, ${err}` });
       }
       break;
     default:
-      response.status(405).json({ msg: "Método Inválido" });
+      res.status(405).json({ msg: "Método Inválido" });
       break;
   }
 }
