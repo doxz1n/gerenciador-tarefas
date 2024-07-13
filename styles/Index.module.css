@@ -5,6 +5,8 @@
     width: 80%; /* largura de 80% da tela */
     margin: 0 auto; /* centralizar horizontalmente */
     background-color: #f7f7f7;
+    border-radius: 10px;
+    margin-bottom: 5%;
   }
 }
 
@@ -22,6 +24,8 @@
   padding: 20px;
   text-align: center;
   margin-top: 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .hero h2 {
@@ -55,6 +59,8 @@
   padding: 20px;
   text-align: center;
   background-color: #3498db;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .callToAction h2 {

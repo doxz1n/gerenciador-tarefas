@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
       <Header></Header>
-      <div className={styles.body}>
+      <div className={`${styles.body} shadow`}>
         <section className={styles.hero}>
           <h2>Bem-vindo ao TaskNext</h2>
           <p>Gerencie suas tarefas de forma fácil e eficiente</p>
@@ -35,7 +35,9 @@ function Home() {
         <section className={styles.callToAction}>
           <h2>Inscreva-se agora</h2>
           <p>E comece a gerenciar suas tarefas de forma eficiente</p>
-          <button className="btn btn-success btn-lg">Inscrever-se</button>
+          <Link className="btn btn-success btn-lg" href="/cadastro">
+            Inscrever-se
+          </Link>
         </section>
       </div>
       <Footer></Footer>
