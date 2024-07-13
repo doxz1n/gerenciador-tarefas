@@ -6,9 +6,9 @@ function Footer() {
   const titulo = "TaskNext";
   return (
     <div className={styles.footer}>
-      <footer className={"footer py-3 mt-5 bg-body-tertiary small text-center"}>
+      <footer>
         <span className="text-body-secondary">
-          {titulo} por{" "}
+          TaskNext por{" "}
           <Link href="https://github.com/doxz1n">
             Henrique Sanchez (doxz1n)
           </Link>
