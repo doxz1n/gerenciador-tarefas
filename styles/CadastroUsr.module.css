@@ -37,4 +37,6 @@
 .form {
   padding: 20px;
   background-color: #f7f7f7;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
