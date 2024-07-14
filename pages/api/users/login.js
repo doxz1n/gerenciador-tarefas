@@ -44,6 +44,6 @@ export default async function handler(req, res) {
     res.status(200).json({ token });
   } catch (error) {
     // Retorna erro interno com status 500
-    res.status(500).json({ msg: "Erro Interno" });
+    res.status(500).json({ msg: error });
   }
 }
