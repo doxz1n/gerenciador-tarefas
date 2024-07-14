@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 import styles from "../styles/CadastroUsr.module.css";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -123,7 +123,7 @@ function Cadastro() {
               </div>
 
               <div className="mb-3">
-                <label for="nome" className="form-label">
+                <label for="senha" className="form-label">
                   Senha
                 </label>
                 <Field
@@ -140,7 +140,7 @@ function Cadastro() {
               </div>
 
               <div className="mb-3">
-                <label for="nome" className="form-label">
+                <label for="" className="form-label">
                   Confirmar Senha
                 </label>
                 <Field
