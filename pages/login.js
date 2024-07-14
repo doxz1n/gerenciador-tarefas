@@ -1,15 +1,17 @@
-import { use, useState } from "react";
+import { useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/Login.module.css";
 import { Formik, Field, Form, ErrorMessage } from "formik";
-import bcrypt from "bcryptjs";
 import * as Yup from "yup";
+import { useRouter } from "next/router";
 
-function Empty() {
+function Login() {
   const [erro, setErro] = useState("");
   const [sucesso, setSucesso] = useState("");
+  const router = useRouter();
+
   const valoresIniciais = {
     email: "",
     senha: "",
@@ -23,27 +25,32 @@ function Empty() {
   const handleSubmit = async (valores, { setSubmitting }) => {
     setErro("");
     setSucesso("");
-
-    const senhacripto = await bcrypt.hash(valores.senha, 10);
-
-    const res = await fetch("/api/users/registrar", {
+    const res = await fetch("/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: valores.email,
-        senha: senhacripto,
+        senha: valores.senha,
       }),
     });
 
+    const data = await res.json();
+
     if (res.ok) {
       setSucesso("Login com sucesso");
+      localStorage.setItem("token", data.token);
+      setTimeout(() => {
+        router.push("/tarefas");
+      }, 2000);
     } else {
-      const data = await res.json();
       setErro(data.msg);
     }
+
+    setSubmitting(false);
   };
+
   return (
     <>
       <Header />
@@ -69,12 +76,12 @@ function Empty() {
           {({ isSubmitting }) => (
             <Form className={styles.form}>
               <div className="mb-3">
-                <label for="Email" class="form-label">
+                <label htmlFor="Email" className="form-label">
                   Email
                 </label>
                 <Field
                   type="email"
-                  class="form-control"
+                  className="form-control"
                   name="email"
                   placeholder="nome@dominio.com"
                 />
@@ -84,13 +91,13 @@ function Empty() {
                   className="text-danger"
                 />
               </div>
-              <div class="mb-3">
-                <label for="senha" class="form-label">
+              <div className="mb-3">
+                <label htmlFor="senha" className="form-label">
                   Senha
                 </label>
                 <Field
                   type="password"
-                  class="form-control"
+                  className="form-control"
                   name="senha"
                   placeholder="Digite sua senha"
                 />
@@ -106,7 +113,7 @@ function Empty() {
                 className="btn btn-primary"
                 disabled={isSubmitting}
               >
-                Entras
+                Entrar
               </button>
             </Form>
           )}
@@ -117,4 +124,4 @@ function Empty() {
   );
 }
 
-export default Empty;
+export default Login;
