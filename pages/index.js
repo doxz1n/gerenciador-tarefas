@@ -13,7 +13,9 @@ function Home() {
         <section className={styles.hero}>
           <h2>Bem-vindo ao TaskNext</h2>
           <p>Gerencie suas tarefas de forma fácil e eficiente</p>
-          <button className="btn btn-primary">Começar agora</button>
+          <Link className="btn btn-primary" href="/login">
+            Começar agora
+          </Link>
         </section>
         <section className={styles.features}>
           <h2>Recursos</h2>

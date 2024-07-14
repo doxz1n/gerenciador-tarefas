@@ -11,7 +11,9 @@ const Header = () => {
           <Image src={logo} alt="Logo" />
         </Link>
       </div>
-      <div className={styles.headerTitulo}>TaskNext</div>
+      <Link className={styles.headerTitulo} href="/">
+        TaskNext
+      </Link>
       <div className={styles.headerLinks}>
         <Link href="/login">Login</Link>
         <Link href="/cadastro">Cadastro</Link>
