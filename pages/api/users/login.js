@@ -36,12 +36,12 @@ export default async function handler(req, res) {
     }
 
     // Gera token JWT com ID do usuário
-    const token = jwt.sign({ id: user._id }, jwtSecret, {
+    const token = jwt.sign({ id: user._id, email: user.email }, jwtSecret, {
       expiresIn: jwtExpiresIn,
     });
-
+    const id = user._id;
     // Retorna token com status 200
-    res.status(200).json({ token });
+    res.status(200).json({ token, id });
   } catch (error) {
     // Retorna erro interno com status 500
     res.status(500).json({ msg: error });

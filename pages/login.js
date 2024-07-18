@@ -36,18 +36,16 @@ function Login() {
       }),
     });
 
-    const data = await res.json();
-
     if (res.ok) {
+      const data = await res.json();
       setSucesso("Login com sucesso");
       localStorage.setItem("token", data.token);
       setTimeout(() => {
-        router.push("/tarefas");
+        router.push(`/tarefas?userId=${data.id}`);
       }, 2000);
     } else {
       setErro(data.msg);
     }
-
     setSubmitting(false);
   };
 
