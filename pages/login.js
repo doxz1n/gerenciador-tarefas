@@ -41,7 +41,7 @@ function Login() {
       setSucesso("Login com sucesso");
       localStorage.setItem("token", data.token);
       setTimeout(() => {
-        router.push(`/tarefas?userId=${data.id}`);
+        router.push(`/tarefas`);
       }, 2000);
     } else {
       setErro(data.msg);

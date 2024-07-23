@@ -8,7 +8,6 @@ export default function Tarefas() {
   const [tarefas, setTarefas] = useState([]);
   const [carregando, setCarregando] = useState(true);
   const router = useRouter();
-  const { userId } = router.query;
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -19,7 +18,7 @@ export default function Tarefas() {
 
     const buscaTarefas = async () => {
       try {
-        const res = await fetch(`/api/tasks?userId=${userId}`, {
+        const res = await fetch(`/api/tasks`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -31,7 +30,7 @@ export default function Tarefas() {
           setCarregando(false);
 
           if (data.tasks.length === 0) {
-            router.push(`/tarefas/nova-tarefa?userId=${userId}`);
+            router.push(`/tarefas/nova-tarefa`);
           }
         } else {
           localStorage.removeItem("token");
@@ -43,13 +42,11 @@ export default function Tarefas() {
       }
     };
 
-    if (userId) {
-      buscaTarefas();
-    }
-  }, [userId]);
+    buscaTarefas();
+  }, [router]);
 
   const handleNovaTarefa = () => {
-    router.push("/nova-tarefa");
+    router.push("/tarefas/nova-tarefa");
   };
 
   return (

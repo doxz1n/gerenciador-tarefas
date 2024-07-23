@@ -10,7 +10,6 @@ export default function NovaTarefa() {
   const [erro, setErro] = useState("");
   const [sucesso, setSucesso] = useState("");
   const router = useRouter();
-  const { userId } = router.query;
 
   const handleSubmit = async (valores, { setSubmitting }) => {
     setErro("");
@@ -31,7 +30,6 @@ export default function NovaTarefa() {
       body: JSON.stringify({
         titulo: valores.titulo,
         descricao: valores.descricao,
-        userId,
       }),
     });
 

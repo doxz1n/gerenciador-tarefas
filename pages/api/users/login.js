@@ -36,7 +36,7 @@ export default async function handler(req, res) {
     }
 
     // Gera token JWT com ID do usuário
-    const token = jwt.sign({ id: user._id, email: user.email }, jwtSecret, {
+    const token = jwt.sign({ id: user._id }, jwtSecret, {
       expiresIn: jwtExpiresIn,
     });
     const id = user._id;
